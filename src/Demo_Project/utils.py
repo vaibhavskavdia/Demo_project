@@ -11,7 +11,7 @@ host=os.getenv("host")
 username=os.getenv("username")
 port=os.getenv("port")
 db=os.getenv("db")
-
+password=os.getenv("password")
 def read_sql_data():
     logging.info("reading sql database started")
     try:
@@ -19,8 +19,8 @@ def read_sql_data():
             host=host,
             port=port,
             database=db,
-            user=username
-            password="12345"
+            user=username,
+            password=password
         )
         logging.info("connection established",mydb)
         df=pd.read_sql_query("select * from customer",mydb)
