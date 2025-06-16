@@ -3,5 +3,9 @@ pandas
 python-dotenv
 psycopg2-binary
 scikit-learn
+seaborn
+matplotlib
+catboost
+xgboost
 #-e .
 

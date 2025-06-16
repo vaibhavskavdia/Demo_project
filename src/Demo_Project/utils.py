@@ -23,7 +23,7 @@ def read_sql_data():
             password=password
         )
         logging.info("connection established",mydb)
-        df=pd.read_sql_query("select * from customer",mydb)
+        df=pd.read_sql_query("select * from payment",mydb)
         print(df.head)
         return df
     except Exception as ex:
