@@ -7,10 +7,10 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 import os
-
+from src.Demo_Project.utils import save_object
 from src.Demo_Project.exception import CustomException
 from src.Demo_Project.logger import logging
-from src.Demo_Project.utils import save_obj
+
 @dataclass
 class DataTransformationConfig:
     #creating a pickle file in artifacts folder that saves the feature engineered data
@@ -74,10 +74,10 @@ class DataTransformation:
             #now to save this in a pickle file so that it can be extracted and used in other places 
             #we will make a function in utils.py that will make a common functionality to operate this
 
-            save_obj(
-                file_path=self.data_transformation_config.preprocessor_obj_file_path
-                obj=preprocessor_obj
-            )
+            save_object(
+                file_path=self.data_transformation_config.preprocessor_obj_file_path,
+                obj=preprocessor_obj)
+            
             return (
                 train_arr,
                 test_arr,
